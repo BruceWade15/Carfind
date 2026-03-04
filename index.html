@@ -1,4 +1,22 @@
-import { useState, useEffect } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Piet Vehicle Advisor — SA Used Car Guide</title>
+<meta name="description" content="Interactive vehicle selection wizard for South African car buyers. 130+ vehicles, intelligent recommendations."/>
+<meta property="og:title" content="Piet Vehicle Advisor"/>
+<meta property="og:description" content="Find your perfect vehicle from 130+ SA models with Piet's intelligent recommendation engine."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>"/>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0D1117;overflow-y:scroll}#root{min-height:100vh}</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<script type="text/babel">
+const{useState,useEffect}=React;
 
 // ═══════════════════════════════════════════════════════════════
 // PIET SA VEHICLE DATABASE — 130+ vehicles currently on sale
@@ -226,7 +244,7 @@ const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):"";
 const stars=n=>"\u2605".repeat(n)+"\u2606".repeat(5-n);
 
 // ═══ MAIN APP ═══
-export default function App(){
+function App(){
   const[step,setStep]=useState(0);
   const[ans,setAns]=useState({});
   const[res,setRes]=useState(null);
@@ -387,3 +405,8 @@ export default function App(){
     </div>
   );
 }
+
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
+</body>
+</html>
